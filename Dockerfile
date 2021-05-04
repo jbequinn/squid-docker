@@ -1,4 +1,4 @@
-FROM alpine:3.13.4
+FROM alpine:3.13.5
 
 RUN apk upgrade
 RUN apk add --update --no-cache squid apache2-utils tzdata tini
