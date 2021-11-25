@@ -11,7 +11,7 @@ if [ -z "$SQUID_PASSWORD" ];then
 fi
 
 echo " - Creating the squid user '${SQUID_USER}':"
-htpasswd -bc "/etc/squid/passwords" ${SQUID_USER} ${SQUID_PASSWORD}
+echo "${SQUID_PASSWORD}" | htpasswd -Bci "/etc/squid/passwords" ${SQUID_USER}
 
 echo " - Starting squid:"
 /usr/sbin/squid -NYCd 1
