@@ -10,8 +10,8 @@ if [ -z "$SQUID_PASSWORD" ];then
   exit 1
 fi
 
-echo " - Creating the squid user ${SQUID_USER}:"
-htpasswd -Bbc "/etc/squid/passwords" ${SQUID_USER} ${SQUID_PASSWORD}
+echo " - Creating the squid user '${SQUID_USER}':"
+htpasswd -bc "/etc/squid/passwords" ${SQUID_USER} ${SQUID_PASSWORD}
 
 echo " - Starting squid:"
 /usr/sbin/squid -NYCd 1
